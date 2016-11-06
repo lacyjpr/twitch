@@ -1,0 +1,19 @@
+body {
+	background-color: #6441A5;
+}
+
+h1 {
+	color: white;
+}
+
+.all {
+	background-color: #B2A900;
+}
+
+.online {
+	background-color: #FFF294;
+}
+
+.offline {
+	background-color: #2800FF;
+}
