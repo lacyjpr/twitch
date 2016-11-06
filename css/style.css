@@ -8,6 +8,7 @@ h1 {
 
 .all {
 	background-color: #B2A900;
+	color: white;
 }
 
 .online {
@@ -15,5 +16,6 @@ h1 {
 }
 
 .offline {
-	background-color: #2800FF;
+	background-color: #3D19FF;
+	color: white;
 }
