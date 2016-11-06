@@ -3,6 +3,7 @@
 var streamers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin", "comster404"];
 
 function getStreams() {
+	// Loop through streamers array
 	for (var i = 0; i < streamers.length; i++) {
 		$.ajax({
 			type: "GET",
@@ -12,6 +13,7 @@ function getStreams() {
 				if (data.stream !== null){
 					console.log(data);
 				} else {
+					// Get channel info for offline streamers
 					$.ajax({
 						type: "GET",
 						url: data._links.channel + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
@@ -22,6 +24,7 @@ function getStreams() {
 					});
 				}
 			},
+			// Handle non-existent channels
 			error: function(data){
 				console.log(data);
 			}
