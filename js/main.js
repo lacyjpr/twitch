@@ -6,15 +6,25 @@ function getStreams() {
 	for (var i = 0; i < streamers.length; i++) {
 		$.ajax({
 			type: "GET",
-			url: "https://api.twitch.tv/kraken/streams/" + streamers[i] + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0",
-			dataType: "json",
-			success: function(response){
-				console.log(response);
+			url: "https://api.twitch.tv/kraken/streams/" + streamers[i] + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
+			dataType: "jsonp",
+			success: function(data){
+				if (data.stream !== null){
+					console.log(data);
+				} else {
+					$.ajax({
+						type: "GET",
+						url: data._links.channel + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
+						dataType: "jsonp",
+						success: function(data){
+							console.log(data);
+						}
+					});
+				}
 			},
-			error: function(response){
-				console.log(response);
+			error: function(data){
+				console.log(data);
 			}
-
 		});
 	}
 }
