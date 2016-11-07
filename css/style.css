@@ -11,23 +11,8 @@ h1 {
 	color: white;
 }
 
-.online {
-	background-color: #FFF294;
-	margin-top: 10px;
-	border: 1px solid white;
-	border-radius: 3px;
-}
-
 .online-btn {
 	background-color: #FFF294;
-}
-
-.offline {
-	background-color: #3D19FF;
-	color: white;
-	margin-top: 10px;
-	border: 1px solid white;
-	border-radius: 3px;
 }
 
 .offline-btn {
@@ -35,19 +20,38 @@ h1 {
 	color: white;
 }
 
+.online {
+	background-color: #FFF294;
+	margin-top: 10px;
+	border: 1px solid white;
+	border-radius: 4px;
+	padding-bottom: 2px;
+	padding-top: 2px
+}
+
+.offline {
+	background-color: #3D19FF;
+	color: white;
+	margin-top: 10px;
+	border: 1px solid white;
+	border-radius: 4px;
+	padding-bottom: 2px;
+	padding-top: 2px
+}
+
 .dne {
 	background-color: #696969;
 	color: white;
 	margin-top: 10px;
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 14px;
+	padding-bottom: 14px;
 	border: 1px solid white;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 
 .logo {
 	max-width: 42px;
   	max-height: 42px;
   	border: 1px solid white;
-  	border-radius: 3px;
+  	border-radius: 4px;
   }
