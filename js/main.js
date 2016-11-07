@@ -10,8 +10,14 @@ function getStreams() {
 			url: "https://api.twitch.tv/kraken/streams/" + streamers[i] + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
 			dataType: "jsonp",
 			success: function(data){
-				if (data.stream !== null){
+				// Handle non-existant streamers
+				if (data.status === 404 || data.status === 422){
 					console.log(data);
+					$("#results").append('<div class="dne col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">' + data.message + '</div>');
+				// Handle online streamers	
+				} else if (data.stream !== null){
+					console.log(data);
+					$("#results").append('<div class="online col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.stream.channel.logo + '" class="logo"> &nbsp' + data.stream.channel.display_name + '&nbsp <a href="' + data.stream.channel.url + '" target="_blank">' + data.stream.channel.status + '</a> </div>');
 				} else {
 					// Get channel info for offline streamers
 					$.ajax({
@@ -20,14 +26,11 @@ function getStreams() {
 						dataType: "jsonp",
 						success: function(data){
 							console.log(data);
+							$("#results").append('<div class="offline col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.logo + '" class="logo"> &nbsp' + data.display_name + '&nbsp Offline </div>');
 						}
 					});
 				}
 			},
-			// Handle non-existent channels
-			error: function(data){
-				console.log(data);
-			}
 		});
 	}
 }

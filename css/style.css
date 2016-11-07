@@ -13,9 +13,33 @@ h1 {
 
 .online {
 	background-color: #FFF294;
+	margin-top: 10px;
+}
+
+.online-btn {
+	background-color: #FFF294;
 }
 
 .offline {
 	background-color: #3D19FF;
 	color: white;
+	margin-top: 10px;
 }
+
+.offline-btn {
+	background-color: #3D19FF;
+	color: white;
+}
+
+.dne {
+	background-color: #696969;
+	color: white;
+	margin-top: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.logo {
+	max-width: 42px;
+  	max-height: 42px;
+  }
