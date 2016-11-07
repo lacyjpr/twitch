@@ -36,3 +36,21 @@ function getStreams() {
 }
 
 getStreams();
+
+$(".all-btn").click(function(){
+	$(".online").removeClass("hidden");
+	$(".offline").removeClass("hidden");
+	$(".dne").removeClass("hidden");
+});
+
+$(".online-btn").click(function(){
+	$(".online").removeClass("hidden");
+	$(".offline").addClass("hidden");
+	$(".dne").addClass("hidden");
+});
+
+$(".offline-btn").click(function(){
+	$(".offline").removeClass("hidden");
+	$(".online").addClass("hidden");
+	$(".dne").addClass("hidden");
+});
