@@ -56,3 +56,8 @@ h1 {
   	border: 1px solid white;
   	border-radius: 4px;
   }
+
+  .viewers {
+	float: right;
+	padding-top: 12px;
+}

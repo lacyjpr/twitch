@@ -1,5 +1,3 @@
-// 99etv7bwptim3jt74z81cqsey9m9mq0
-
 var streamers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "brunofin", "comster404"];
 
 function getStreams() {
@@ -17,7 +15,7 @@ function getStreams() {
 				// Handle online streamers	
 				} else if (data.stream !== null){
 					console.log(data);
-					$("#results").append('<div class="online col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.stream.channel.logo + '" class="logo"> &nbsp' + data.stream.channel.display_name + '&nbsp <a href="' + data.stream.channel.url + '" target="_blank">' + data.stream.channel.status + '</a> </div>');
+					$("#results").append('<div class="online col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.stream.channel.logo + '" class="logo"> &nbsp' + data.stream.channel.display_name + '&nbsp <a href="' + data.stream.channel.url + '" target="_blank">' + data.stream.channel.status + '</a> <span class="viewers">' + data.stream.viewers + '</span></div>');
 				} else {
 					// Get channel info for offline streamers
 					$.ajax({
