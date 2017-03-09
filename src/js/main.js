@@ -5,7 +5,7 @@ function getStreams() {
 	for (var i = 0; i < streamers.length; i++) {
 		$.ajax({
 			type: "GET",
-			url: "https://wind-bow.gomix.me/twitch-api/streams/'" + streamers[i], 
+			url: "https://api.twitch.tv/kraken/streams/" + streamers[i] + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
 			dataType: "jsonp",
 			success: function(data){
 				// Handle non-existant streamers
@@ -20,7 +20,7 @@ function getStreams() {
 					// Get channel info for offline streamers
 					$.ajax({
 						type: "GET",
-						url: data._links.channel, 
+						url: data._links.channel + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?",
 						dataType: "jsonp",
 						success: function(data){
 							console.log(data);
