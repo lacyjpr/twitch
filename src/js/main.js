@@ -13,7 +13,6 @@ function getStreams() {
 				$.getJSON(data._links.channel + "?client_id=99etv7bwptim3jt74z81cqsey9m9mq0&callback=?", function(data) {
 					// Handle non-existant streamers
 					if (data.status === 404 || data.status === 422 || data.error === "Not Found"){
-						console.log(data);
 						$("#results").append('<div class="dne col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">' + data.message + '</div>');
 					} else {	
 						$("#results").append('<div class="offline col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.logo + '" class="logo"> &nbsp' + data.display_name + '&nbsp Offline </div>');
