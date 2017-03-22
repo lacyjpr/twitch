@@ -10,7 +10,6 @@ function getStreams() {
 			success: function(data){
 				// Handle online streamers	
 				if (data.stream !== null){
-					console.log(data);
 					$("#results").append('<div class="online col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.stream.channel.logo + '" class="logo"> &nbsp' + data.stream.channel.display_name + '&nbsp <a href="' + data.stream.channel.url + '" target="_blank">' + data.stream.channel.status + '</a> <span class="viewers">' + data.stream.viewers + '</span></div>');
 				} else {
 					// Get channel info for offline streamers
@@ -21,11 +20,9 @@ function getStreams() {
 						success: function(data){
 							// Handle non-existant streamers
 							if (data.status === 404 || data.status === 422){
-							console.log(data);
 							$("#results").append('<div class="dne col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">' + data.message + '</div>');
 							} else {
 							// Handle offline streamers
-							console.log(data);
 							$("#results").append('<div class="offline col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2"> <img src="' + data.logo + '" class="logo"> &nbsp' + data.display_name + '&nbsp Offline </div>');
 							}
 						}
